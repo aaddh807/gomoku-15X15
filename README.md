@@ -1,1 +1,1 @@
-Tic tac toe app with the first person to have 10 wins to win
+Gomoku ios app 15 X 15 board
