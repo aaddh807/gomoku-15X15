@@ -6,38 +6,35 @@ struct ContentView: View
     
     var body: some View
     {
-        let borderSize = CGFloat(5)
+        let borderSize = CGFloat(10)
         
         Text(gameState.turnText())
             .font(.title)
             .bold()
             .padding()
 
-        Text(String("First reach 10 wins to win!"))
+        Text(String("First reach 5 in a line to win!"))
             .font(.title)
             .bold()
             .padding()
             .foregroundStyle(.red)
-        Text(String(format: "Crosses: %d", gameState.crossesScore))
-            .font(.title)
-            .bold()
-            .padding()
+
         
         VStack(spacing: borderSize)
         {
-            ForEach(0...2, id: \.self)
+            ForEach(0...14, id: \.self)
             {
                 row in
                 HStack(spacing: borderSize)
                 {
-                    ForEach(0...2, id: \.self)
+                    ForEach(0...14, id: \.self)
                     {
                         column in
                         
                         let cell = gameState.board[row][column]
                         
                         Text(cell.displayTile())
-                            .font(.system(size: 20))
+                            .font(.system(size: 15))
                             .foregroundColor(cell.tileColor())
                             .bold()
                             .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -64,11 +61,7 @@ struct ContentView: View
             )
         }
         
-        Text(String(format: "Noughts: %d", gameState.noughtsScore))
-            .font(.title)
-            .bold()
-            .padding()
-        Spacer()
+
     }
 }
 

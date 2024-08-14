@@ -4,8 +4,7 @@ class GameState: ObservableObject
 {
     @Published var board = [[Cell]]()
     @Published var turn = Tile.Cross
-    @Published var noughtsScore = 0
-    @Published var crossesScore = 0
+
     @Published var showAlert = false
     @Published var alertMessage = "Draw"
     
@@ -31,27 +30,14 @@ class GameState: ObservableObject
         board[row][column].tile = turn == Tile.Cross ? Tile.Cross : Tile.Nought
         
         
-        if(checkForVictory())
+        if(checkForVictory(row,column))
         {
-            if(turn == Tile.Cross)
-            {
-                crossesScore += 1
-            }
-            else
-            {
-                noughtsScore += 1
-            }
+
             let winner = turn == Tile.Cross ? "Crosses" : "Noughts"
             alertMessage = winner + " Win!"
-            if (noughtsScore == 10){
-                alertMessage = winner + "is the Final Winner!"}
-                noughtsScore = 0
-                crossesScore = 0
-            if (crossesScore == 10){
-                alertMessage = winner + "is the Final Winner!"}
-                noughtsScore = 0
-                crossesScore = 0
-                
+
+
+            
             showAlert = true
         }
         else
@@ -82,63 +68,80 @@ class GameState: ObservableObject
         return true
     }
     
-    func checkForVictory() -> Bool
+    func checkForVictory(_ row: Int,_ column: Int) -> Bool
     {
-        // vertical victory
-        if isTurnTile(0, 0) && isTurnTile(1, 0) && isTurnTile(2, 0)
-        {
+        if (checkDiagonalVictory(row, column) == true) {
             return true
         }
-        if isTurnTile(0, 1) && isTurnTile(1, 1) && isTurnTile(2, 1)
-        {
+        if (checkVerticalVictory(row, column) == true) {
             return true
         }
-        if isTurnTile(0, 2) && isTurnTile(1, 2) && isTurnTile(2, 2)
-        {
+        if (checkHorizontalVictory(row, column) == true) {
             return true
         }
-        
-        // horizontal victory
-        if isTurnTile(0, 0) && isTurnTile(0, 1) && isTurnTile(0, 2)
-        {
-            return true
-        }
-        if isTurnTile(1, 0) && isTurnTile(1, 1) && isTurnTile(1, 2)
-        {
-            return true
-        }
-        if isTurnTile(2, 0) && isTurnTile(2, 1) && isTurnTile(2, 2)
-        {
-            return true
-        }
-        
-        // diagonal victory
-        if isTurnTile(0, 0) && isTurnTile(1, 1) && isTurnTile(2, 2)
-        {
-            return true
-        }
-        if isTurnTile(0, 2) && isTurnTile(1, 1) && isTurnTile(2, 0)
-        {
-            return true
-        }
-        
-        
         return false
     }
     
     func isTurnTile(_ row: Int,_ column: Int) -> Bool
     {
+        if (row < 0) {
+            return false
+        }
+        if (column < 0) {
+            return false
+        }
         return board[row][column].tile == turn
     }
-    
+    func checkDiagonalVictory(_ row: Int,_ column: Int) -> Bool
+    {
+        var num = 0
+        for i in 0...8 {
+            if (isTurnTile(row-4+i,column-4+i) == true)
+            {
+                num += 1
+                if (num > 4) {
+                    return true
+                }
+            }
+            else {
+                num = 0
+            }
+        }
+        return false
+    }
+    func checkHorizontalVictory(_ row : Int,_ column: Int) -> Bool {
+        var num = 0
+        for i in 0...8 {
+            if (isTurnTile(row, column-4+i) == true) {
+                num += 1
+                if (num > 4) {
+                    return true
+                }
+            }
+        }
+        return false
+    }
+    func checkVerticalVictory(_ row : Int,_ column: Int) -> Bool {
+        var num = 0
+        for i in 0...8 {
+            if (isTurnTile(row-4+i, column) == true) {
+                num += 1
+                if (num > 4) {
+                    return true
+                }
+            }
+        }
+        return false
+    }
+
     func resetBoard()
     {
         var newBoard = [[Cell]]()
         
-        for _ in 0...2
+        for _ in 0...14
         {
             var row = [Cell]()
-            for _ in 0...2
+            for _ in 0...14
             {
                 row.append(Cell(tile: Tile.Empty))
             }

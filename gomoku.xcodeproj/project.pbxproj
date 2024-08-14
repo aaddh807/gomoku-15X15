@@ -23,8 +23,8 @@
 		190DF34828D688CD0028AC05 /* TicTacToeSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicTacToeSwiftUIApp.swift; sourceTree = "<group>"; };
 		190DF34928D688CD0028AC05 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		190DF34A28D688CE0028AC05 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		190DF34F28D688CE0028AC05 /* TicTacToeSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TicTacToeSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		190DF35528D688CE0028AC05 /* TicTacToeSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TicTacToeSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		190DF34F28D688CE0028AC05 /* gomoku.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = gomoku.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		190DF35528D688CE0028AC05 /* gomoku.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = gomoku.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		190DF35728D688CE0028AC05 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
 		190DF36628D688E00028AC05 /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
 		190DF36928D68AF50028AC05 /* GameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameState.swift; sourceTree = "<group>"; };
@@ -72,8 +72,8 @@
 		190DF35028D688CE0028AC05 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				190DF34F28D688CE0028AC05 /* TicTacToeSwiftUI.app */,
-				190DF35528D688CE0028AC05 /* TicTacToeSwiftUI.app */,
+				190DF34F28D688CE0028AC05 /* gomoku.app */,
+				190DF35528D688CE0028AC05 /* gomoku.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -89,9 +89,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		190DF34E28D688CE0028AC05 /* TicTacToeSwiftUI (iOS) */ = {
+		190DF34E28D688CE0028AC05 /* gomoku (iOS) */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 190DF36028D688CE0028AC05 /* Build configuration list for PBXNativeTarget "TicTacToeSwiftUI (iOS)" */;
+			buildConfigurationList = 190DF36028D688CE0028AC05 /* Build configuration list for PBXNativeTarget "gomoku (iOS)" */;
 			buildPhases = (
 				190DF34B28D688CE0028AC05 /* Sources */,
 				190DF34C28D688CE0028AC05 /* Frameworks */,
@@ -101,14 +101,14 @@
 			);
 			dependencies = (
 			);
-			name = "TicTacToeSwiftUI (iOS)";
+			name = "gomoku (iOS)";
 			productName = "TicTacToeSwiftUI (iOS)";
-			productReference = 190DF34F28D688CE0028AC05 /* TicTacToeSwiftUI.app */;
+			productReference = 190DF34F28D688CE0028AC05 /* gomoku.app */;
 			productType = "com.apple.product-type.application";
 		};
-		190DF35428D688CE0028AC05 /* TicTacToeSwiftUI (macOS) */ = {
+		190DF35428D688CE0028AC05 /* gomoku (macOS) */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 190DF36328D688CE0028AC05 /* Build configuration list for PBXNativeTarget "TicTacToeSwiftUI (macOS)" */;
+			buildConfigurationList = 190DF36328D688CE0028AC05 /* Build configuration list for PBXNativeTarget "gomoku (macOS)" */;
 			buildPhases = (
 				190DF35128D688CE0028AC05 /* Sources */,
 				190DF35228D688CE0028AC05 /* Frameworks */,
@@ -118,9 +118,9 @@
 			);
 			dependencies = (
 			);
-			name = "TicTacToeSwiftUI (macOS)";
+			name = "gomoku (macOS)";
 			productName = "TicTacToeSwiftUI (macOS)";
-			productReference = 190DF35528D688CE0028AC05 /* TicTacToeSwiftUI.app */;
+			productReference = 190DF35528D688CE0028AC05 /* gomoku.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -141,7 +141,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 190DF34628D688CD0028AC05 /* Build configuration list for PBXProject "TicTacToeSwiftUI" */;
+			buildConfigurationList = 190DF34628D688CD0028AC05 /* Build configuration list for PBXProject "gomoku" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -154,8 +154,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				190DF34E28D688CE0028AC05 /* TicTacToeSwiftUI (iOS) */,
-				190DF35428D688CE0028AC05 /* TicTacToeSwiftUI (macOS) */,
+				190DF34E28D688CE0028AC05 /* gomoku (iOS) */,
+				190DF35428D688CE0028AC05 /* gomoku (macOS) */,
 			);
 		};
 /* End PBXProject section */
@@ -336,7 +336,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = code.with.cal.TicTacToeSwiftUI;
-				PRODUCT_NAME = TicTacToeSwiftUI;
+				PRODUCT_NAME = gomoku;
 				SDKROOT = iphoneos;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -366,7 +366,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = code.with.cal.TicTacToeSwiftUI;
-				PRODUCT_NAME = TicTacToeSwiftUI;
+				PRODUCT_NAME = gomoku;
 				SDKROOT = iphoneos;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -396,7 +396,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 12.3;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = code.with.cal.TicTacToeSwiftUI;
-				PRODUCT_NAME = TicTacToeSwiftUI;
+				PRODUCT_NAME = gomoku;
 				SDKROOT = macosx;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -424,7 +424,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 12.3;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = code.with.cal.TicTacToeSwiftUI;
-				PRODUCT_NAME = TicTacToeSwiftUI;
+				PRODUCT_NAME = gomoku;
 				SDKROOT = macosx;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -434,7 +434,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		190DF34628D688CD0028AC05 /* Build configuration list for PBXProject "TicTacToeSwiftUI" */ = {
+		190DF34628D688CD0028AC05 /* Build configuration list for PBXProject "gomoku" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				190DF35E28D688CE0028AC05 /* Debug */,
@@ -443,7 +443,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		190DF36028D688CE0028AC05 /* Build configuration list for PBXNativeTarget "TicTacToeSwiftUI (iOS)" */ = {
+		190DF36028D688CE0028AC05 /* Build configuration list for PBXNativeTarget "gomoku (iOS)" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				190DF36128D688CE0028AC05 /* Debug */,
@@ -452,7 +452,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		190DF36328D688CE0028AC05 /* Build configuration list for PBXNativeTarget "TicTacToeSwiftUI (macOS)" */ = {
+		190DF36328D688CE0028AC05 /* Build configuration list for PBXNativeTarget "gomoku (macOS)" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				190DF36428D688CE0028AC05 /* Debug */,
