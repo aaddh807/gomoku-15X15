@@ -1,1 +1,1 @@
-Gomoku ios app 15 X 15 board
+Gomuku with 15X15 board
